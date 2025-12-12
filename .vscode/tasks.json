@@ -1,0 +1,35 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Flutter: Pub Get (my_counter_app)",
+      "type": "shell",
+      "command": "${workspaceFolder}/flutter/bin/flutter",
+      "args": ["pub", "get"],
+      "options": {
+        "cwd": "${workspaceFolder}/my_counter_app"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Flutter: Web Preview (Codespaces)",
+      "type": "shell",
+      "command": "${workspaceFolder}/flutter/bin/flutter",
+      "args": [
+        "run",
+        "-d",
+        "web-server",
+        "--web-hostname",
+        "0.0.0.0",
+        "--web-port",
+        "8080"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/my_counter_app"
+      },
+      "dependsOn": ["Flutter: Pub Get (my_counter_app)"],
+      "isBackground": true,
+      "problemMatcher": []
+    }
+  ]
+}
